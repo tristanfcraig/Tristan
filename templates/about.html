@@ -1,0 +1,161 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Contact
+{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block main %}
+
+<style type="text/css">
+.bgimg {
+    background-image: url('static/Tristan1.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.demo-card-square.mdl-card {
+  width: 320px;
+}
+.demo-card-square > .mdl-card__title {
+  color: #FFFFFF;
+  background: #292C33;
+}
+</style>
+
+<div class="bgimg animated fadeIn" style="width:100%;height:600px">
+</div>
+
+<div id="anchor" style="margin-left:10%;margin-top:6%; color:#FFFFFF">
+    <h4><strong>ABOUT</strong></h4>
+</div>
+
+<div class="mdl-grid" style="width:81%">
+    <div class="mdl-cell mdl-cell--12-col">
+        <div class="animated fadeIn" style="color:#FFFFFF">
+            <h6>Tristan is originally from Cypress, TX and he is currently a Freshman at Harvard College.
+                He graduated from The John Cooper School in 2016, where he was captain of the Men's soccer team.
+                Tristan's biggest hobbies are soccer, basketball, photography, and hip hop music.</h6>
+                <br><br>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--12-col" style="margin-bottom:4%">
+        <div class="demo-card-square mdl-card mdl-shadow--2dp animated zoomIn" style="width:101%; margin-left:-10px" style="background:#292C33">
+            <div class="mdl-card__title mdl-card--expand" style="background:#292C33">
+                <h2 class="mdl-card__title-text" style="margin-top:8px"><strong>QUOTE</strong></h2>
+            </div>
+            <div class="mdl-card__supporting-text" style="background:#292C33;color:#FFFFFF;width:100%">
+                <div style="width:90%;margin-top:-25px">
+                    {% set i = quotes|random %}
+                    <h6>{{ i.quote }} <br> -{{ i.author }} </h6>
+                </div>
+            </div>
+            <div class="mdl-card__actions mdl-card--border" style="background:#292C33">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="color:#E91E63" href="{{ i.context_url }}">
+                    <strong>CONTEXT</strong>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {% if (session['logged_in']) %}
+    <div class="mdl-cell mdl-cell--12-col" style="margin-top:-2%">
+        <form action="{{ url_for('delete_quote') }}" method="POST">
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect animated fadeIn" style="color:#E91E63" href="/add_quote">
+                <strong>ADD QUOTE</strong>
+            </a>
+            {% if (quotes|length > 1) %}
+            <input type="hidden" name="quote_id" value="{{ i.id }}" />
+            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" type="submit" style="color:#E91E63">
+                <strong>Delete</strong>
+            </button>
+            {% endif %}
+        </form>
+    </div>
+    {% endif %}
+    <br><br><br><br>
+    {% for j in groups | reverse %}
+    <div class="mdl-cell mdl-cell--4-col">
+        <div style="color:#FFFFFF">
+            <h6><strong>{{j.name | upper}}</strong></h6>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--8-col">
+        <div style="color:#FFFFFF;margin-left:6%">
+            <h6>{{j.mission}}</h6>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="mdl-cell mdl-cell--4-col">
+        <div style="color:#FFFFFF">
+            <h6><strong>HARVARD COLLEGE ENGINEERING SOCIETY</strong></h6>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--8-col">
+        <div style="color:#FFFFFF;margin-left:6%">
+            <h6>The Harvard College Engineering Society is a student-run organization at Harvard College aimed at promoting engineering and cross disciplinary collaboration on campus through mentorship activities, community building, professional recruiting and collaboration, as well as serving as a resource for undergraduate engineers at Harvard.</h6>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col">
+        <div style="color:#FFFFFF">
+            <h6><strong>HARVARD FINANCIAL ANALYSIS CLUB</strong></h6>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--8-col">
+        <div style="color:#FFFFFF;margin-left:6%">
+            <h6>The Harvard Financial Analysts Club is dedicated to providing the Harvard student body with sound financial education programs and real-world investment experience. </h6>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col">
+        <div style="color:#FFFFFF">
+            <h6><strong>HARVARD COLLEGE ENTREPRENEURSHIP FORUM</strong></h6>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--8-col">
+        <div style="color:#FFFFFF;margin-left:6%">
+            <h6>HCEF is a student-run organization at Harvard College that works to help students channel their creativity towards successful enterprise.</h6>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col">
+        <div style="color:#FFFFFF">
+            <h6><strong>YARD ATHLETIC COMMITTEE</strong></h6>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--8-col">
+        <div style="color:#FFFFFF;margin-left:6%">
+            <h6>The Freshman Intramural Program serves to promote dorm spirit, friendly competition, and healthy living at Harvard College through various sports & events.</h6>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col">
+        <div style="color:#FFFFFF">
+            <h6><strong>HARVARD COLLEGE CONSULTING GROUP</strong></h6>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--8-col">
+        <div style="color:#FFFFFF;margin-left:6%">
+            <h6>HCCG is a Harvard non-profit student group that advises influential businesses and companies on strategic decisions using quantitative and qualitative analysis.</h6>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col">
+        <div style="color:#FFFFFF">
+            <h6><strong>CRIMSON KEY SOCIETY</strong></h6>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--8-col">
+        <div style="color:#FFFFFF;margin-left:6%">
+            <h6>The mission of the Crimson Key Society is to make Harvard more accessible to those unfamiliar with the campus.  To this end, the members of the Society guide tours, answer questions, and host events for incoming freshmen, students’ families, and all those visiting Harvard.</h6>
+        </div>
+    </div>
+    {% if session['logged_in'] %}
+    <div class="mdl-cell mdl-cell--12-col" style="margin-top:2%">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect animated fadeIn" style="color:#E91E63" href="/add_group">
+            <strong>ADD GROUP</strong>
+        </a>
+    </div>
+    {% endif %}
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block main %}
+
+<div style="margin-left:10%;margin-top:6%; color:#FFFFFF">
+    <h4><strong>FAILED TO SEND</strong></h4>
+</div>
+
+<div class="mdl-grid" style="width:81%">
+    <div class="mdl-cell mdl-cell--12-col">
+        <div class="demo-card-square mdl-card mdl-shadow--2dp animated zoomIn" style="width:100%" style="background:#292C33">
+            <div class="mdl-card__supporting-text" style="background:#292C33;color:#FFFFFF;width:100%">
+                <div style="width:90%">
+                    <form action="{{ url_for('contact') }}" method="post">
+                        <div class="mdl-grid">
+                            <div class="mdl-cell mdl-cell--6-col">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%">
+                                    <input class="mdl-textfield__input" type="text" name="first_name" id="first_name" style="color:#FFFFFF">
+                                    <label class="mdl-textfield__label" for="first_name" style="color:#FFFFFF">First Name</label>
+                                    <span class="mdl-textfield__error">Required</span>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--6-col">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%">
+                                    <input class="mdl-textfield__input" name="last_name" type="text" id="last_name" style="color:#FFFFFF">
+                                    <label class="mdl-textfield__label" for="last_name" style="color:#FFFFFF">Last Name</label>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%">
+                                    <input class="mdl-textfield__input" name="email" type="text" id="email" style="color:#FFFFFF">
+                                    <label class="mdl-textfield__label" for="email" style="color:#FFFFFF">Email Address</label>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <div class="mdl-textfield mdl-js-textfield" style="width:100%">
+                                    <textarea class="mdl-textfield__input" name="message" type="text" rows= "10" id="message" style="color:#FFFFFF"></textarea>
+                                    <label class="mdl-textfield__label" for="message" style="color:#FFFFFF">Message</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="mdl-button mdl-js-button mdl-button--primary" type="submit">
+                                <strong>Submit</strong>
+                            </button>
+                            <button class="mdl-button mdl-js-button mdl-button--primary" type="reset">
+                                <strong>Clear</strong>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

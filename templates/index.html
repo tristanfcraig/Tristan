@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block main %}
+
+<style type="text/css">
+.bgimg {
+    background-image: url('static/Tristan2.jpg');
+    background-size: 100%;
+    background-position: center / cover;
+    background-repeat: no-repeat;
+}
+.harvard {
+    background-image: url('static/Harvard.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.center-div
+{
+     margin: 0 auto;
+     width:850px;
+}
+</style>
+
+<div class="bgimg" style="width:100%;height:775px">
+</div>
+
+<div class="center-div" style="text-align:center;margin-top:6%;color:#FFFFFF">
+    <h4><strong>COLLEGE STUDENT x DEVELOPER x ENTREPRENEUR</strong></h4>
+</div>
+
+<br><br><br><br>
+<div class="mdl-grid" style="width:81%;margin-left:200px">
+    <div class="mdl-cell mdl-cell--6-col">
+        <div class="center-div animated fadeIn" style="color:#FFFFFF">
+            <img src="static/Phoenix.png" alt="Mountain View" style="width:50%">
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--6-col">
+        <div class="center-div">
+            <img src="static/Harvard.png" alt="Mountain View" style="width:40%;margin-top:6%">
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br>
+<div class="mdl-grid" style="width:61%;margin-left:345px">
+    <div class="mdl-cell mdl-cell--3-col">
+        <a href="https://www.facebook.com/tristanfcraig"><i class="fa fa-facebook fa-4x" style="color:#FFFFFF" aria-hidden="true"></i></a>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col">
+        <a href="https://www.instagram.com/tristanfair/"><i class="fa fa-instagram fa-4x" style="color:#FFFFFF" aria-hidden="true"></i></a>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col">
+        <a href="https://twitter.com/tristanfcraig"><i class="fa fa-twitter fa-4x" style="color:#FFFFFF" aria-hidden="true"></i></a>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col">
+        <a href="http://www.linkedin.com"><i class="fa fa-linkedin-square fa-4x" style="color:#FFFFFF" aria-hidden="true"></i></a>
+    </div>
+</div>
+<br><br><br><br>
+<div class="mdl-grid" style="width:81%;margin-left:31%">
+    <div class="mdl-cell mdl-cell--12-col" style="margin-top:2%;color:#FFFFFF">
+        <div class="center-div">
+            © 2016 Tristan Craig
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect animated fadeIn" style="color:#FFFFFF" href="/login">
+                <strong>LOG IN</strong>
+            </a>
+
+        </div>
+        <div class="center-div" style="margin-left:25%">
+            {% if session['logged_in'] %}
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect animated fadeIn" style="color:#FFFFFF" href="/logout">
+                <strong>LOGOUT</strong>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<br><br><br><br>
+
+{% endblock %}

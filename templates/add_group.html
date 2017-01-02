@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Group
+{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block main %}
+
+<style>
+.mdl-textfield__label:after{
+    background-color: #E91E63 !important;
+}
+</style>
+
+<div style="margin-left:10%;margin-top:6%; color:#FFFFFF">
+    <h4><strong>ADD GROUP</strong></h4>
+</div>
+
+<div class="mdl-grid" style="width:81%">
+    <div class="mdl-cell mdl-cell--12-col">
+        <div class="demo-card-square mdl-card mdl-shadow--2dp animated zoomIn" style="width:100%" style="background:#292C33">
+            <div class="mdl-card__supporting-text" style="background:#292C33;color:#FFFFFF;width:100%">
+                <div style="width:90%">
+                    <form action="{{ url_for('add_group') }}" method="post">
+                        <div class="mdl-grid">
+                            <div class="mdl-cell mdl-cell--6-col">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%;color:#673AB7">
+                                    <input class="mdl-textfield__input" type="text" name="name" id="name" style="color:#FFFFFF">
+                                    <label class="mdl-textfield__label" for="name" style="color:#FFFFFF">Name</label>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <div class="mdl-textfield mdl-js-textfield" style="width:100%">
+                                    <textarea class="mdl-textfield__input" name="mission" type="text" rows= "16" id="mission" style="color:#FFFFFF"></textarea>
+                                    <label class="mdl-textfield__label" for="mission" style="color:#FFFFFF">Mission</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="color:#E91E63" type="submit">
+                                <strong>Add Group</strong>
+                            </button>
+                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="color:#E91E63" type="reset">
+                                <strong>Clear</strong>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

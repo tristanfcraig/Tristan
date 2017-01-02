@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Post
+{% endblock %}
+
+{% block head %}
+
+<head>
+
+</head>
+
+{% endblock %}
+
+{% block main %}
+
+<style>
+.mdl-textfield__label:after{
+    background-color: #673AB7 !important;
+}
+</style>
+
+<div style="margin-left:10%;margin-top:6%; color:#FFFFFF">
+    <h4><strong>ADD POST</strong></h4>
+</div>
+
+<div class="mdl-grid" style="width:81%">
+    <div class="mdl-cell mdl-cell--12-col">
+        <div class="demo-card-square mdl-card mdl-shadow--2dp animated zoomIn" style="width:100%" style="background:#292C33">
+            <div class="mdl-card__supporting-text" style="background:#292C33;color:#FFFFFF;width:100%">
+                <div style="width:90%">
+                    <form action="{{ url_for('add_post') }}" method="post">
+                        <div class="mdl-grid">
+                            <div class="mdl-cell mdl-cell--6-col">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%;color:#673AB7">
+                                    <input class="mdl-textfield__input" type="text" name="title" id="title" style="color:#FFFFFF">
+                                    <label class="mdl-textfield__label" for="title" style="color:#FFFFFF">Title</label>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%;color:#673AB7">
+                                    <input class="mdl-textfield__input" type="text" name="url" id="url" style="color:#FFFFFF">
+                                    <label class="mdl-textfield__label" for="url" style="color:#FFFFFF">URL</label>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <div class="mdl-textfield mdl-js-textfield" style="width:100%">
+                                    <textarea class="mdl-textfield__input" name="content" type="text" rows= "16" id="content" style="color:#FFFFFF"></textarea>
+                                    <label class="mdl-textfield__label" for="content" style="color:#FFFFFF">Content</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="color:#673AB7" type="submit">
+                                <strong>Add Post</strong>
+                            </button>
+                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="color:#673AB7" type="reset">
+                                <strong>Clear</strong>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
